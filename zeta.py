@@ -233,6 +233,6 @@ async def on_member_join(member):
     channel = client.get_channel(1029059697753477180)
     await member.add_roles(client.get_guild(937304520671760404).get_role(1029426679501828126))
     await channel.send(member.mention+'님 만나서 반가워요!')
-    await member.send('이제 준회원 게시판을 사용할 수 있습니다.')
+    await member.send('이제 준회원 게시판을 사용해보세요.')
 
 client.run(token)
