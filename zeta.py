@@ -1,4 +1,3 @@
-import asyncio
 import discord
 from discord.ext import commands
 import sqlite3
@@ -28,6 +27,10 @@ async def on_message(message):
     if message.author == client.user:
         return
     guild = message.guild
+    if message.content.startswith("!ㅂ"):
+        duild = discord.guild.Guild(1029786066082869299)
+        to = duild.get_member(611959855330099230)
+        await to.send('dd')
     if message.content == '!ping' or message.content == '!핑':
         latency = str(round(client.latency*1000))+'ms'
         await message.channel.send(':ping_pong: Pong! '+latency)
@@ -47,6 +50,8 @@ async def on_message(message):
     elif message.content.startswith('!DM') or message.content.startswith('!dm') or message.content.startswith('!ㄷㅇ'):
         msg = message.content[4:]
         to = message.guild.get_member(int(msg[2:21]))
+        print(to)
+        print(type(to))
         content = msg[23:]
         await message.channel.purge(limit=1)
         embed = discord.Embed(title="DM이 도착했습니다.", color=0x66edff)
